@@ -1,0 +1,13 @@
+<ion-view view-title="Trend">
+  <ion-content>
+
+  	<!-- estabelecimentos -->
+    <ion-list>
+      <ion-item class="item-thumbnail-left" ng-repeat="estabelecimento in estabelecimentos | orderBy: '-checkin'" type="item-text-wrap" href="#/tab/categorias/{{categoria.id}}">
+        <img ng-src="{{estabelecimento.avatar}}">
+        <h2 ng-bind="estabelecimento.name"></h2>
+        <p ng-bind="estabelecimento.checkin"></p>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
