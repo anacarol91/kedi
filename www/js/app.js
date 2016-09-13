@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -36,7 +36,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $ionicConfigProvider.backButton.previousTitleText(false);
   $ionicConfigProvider.form.toggle('small');
   //$ionicConfigProvider.form.checkbox('');
-  $ionicConfigProvider.spinner.icon('crescent');
+  $ionicConfigProvider.spinner.icon('spiral');
 
 
 

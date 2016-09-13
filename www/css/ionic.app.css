@@ -9814,3 +9814,31 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.love-couple {
+  background: #3a6186;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #3a6186, #89253e);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #3a6186, #89253e);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+.calm-daria {
+  background: #5f2c82;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #5f2c82, #49a09d);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #5f2c82, #49a09d);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+ion-list ion-item img {
+  background-color: #ccc;
+  opacity: 0.6;
+  width: 100%;
+  display: flex; }
+
+ion-list ion-item img:active {
+  box-shadow: none; }
+
+#clubs-list .item-complex .item-content {
+  padding: 0; }

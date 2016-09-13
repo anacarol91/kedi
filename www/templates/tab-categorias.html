@@ -14,17 +14,15 @@
     </div>
   </ion-nav-title>
 
-  <ion-content class="padding">
+  <ion-content>
+
+    <ion-refresher on-refresh="refreshCategorias()" pulling-icon="false"></ion-refresher>
 
     <!-- categorias -->
     <ion-list>
       <ion-item class="item-thumbnail-left" ng-repeat="categoria in categorias | orderBy: 'name' | filter: $parent.search as results" type="item-text-wrap" href="#/tab/categorias/{{categoria.id}}">
-        <img style="background-color: #ccc;opacity: 0.5;" ng-src="{{categoria.icon}}">
+        <img ng-src="{{categoria.icon}}">
         <h2 ng-bind="categoria.name"></h2>
-
-        <ion-option-button class="button-assertive" ng-click="remove(categoria)">
-          Delete
-        </ion-option-button>
       </ion-item>
     </ion-list>
 

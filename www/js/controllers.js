@@ -14,15 +14,34 @@ angular.module('starter.controllers', [])
   $scope.categorias = Categorias.all();
   $scope.estabelecimentos = Estabelecimentos.all();
 
+  $scope.refreshCategorias = function () {
+    $scope.categorias = Categorias.all();
+    $scope.$broadcast('scroll.refreshComplete');
+  }
+
+  $scope.refreshEstabelecimentos = function () {
+    $scope.estabelecimentos = Estabelecimentos.all();
+    $scope.$broadcast('scroll.refreshComplete');
+  }
+
   $scope.remove = function(categoria) {
     Categorias.remove(categoria);
   };
 })
 
-.controller('EstabelecimentosCtrl', function($scope, $stateParams, Estabelecimentos) {
+.controller('EstabelecimentosCtrl', function($scope, $state, $stateParams, Estabelecimentos) {
   $scope.categoria = Estabelecimentos.getCategoria($stateParams.categoriaId);
 
   $scope.estabelecimentos = Estabelecimentos.all();
+
+  $scope.refreshEstabelecimentos = function () {
+    $scope.estabelecimentos = Estabelecimentos.all();
+    $scope.$broadcast('scroll.refreshComplete');
+  }
+
+  $scope.change = function(){
+    $state.go('tab.categorias');
+  }
 
   $scope.remove = function(categoria) {
     Estabelecimentos.remove(categoria);

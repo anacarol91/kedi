@@ -123,6 +123,71 @@ angular.module('starter.services', [])
       icon: 'img/rock.png',
     },
     checkin: '1910'
+  },
+  {
+    id: 0,
+    name: 'Dduck Club',
+    avatar: 'img/dduck.png',
+    categoria: {
+      id: 0,
+      name: 'LGBT',
+      icon: 'img/lgbt.png',
+    },
+    checkin: '1000'
+  },{
+    id: 1,
+    name: 'Royalty Club',
+    avatar: 'img/royalty.png',
+    categoria: {
+      id: 0,
+      name: 'LGBT',
+      icon: 'img/lgbt.png',
+    },
+    checkin: '1010'
+  },
+  {
+    id: 2,
+    name: 'Beb\'s Bar',
+    avatar: 'img/bebs.jpg',
+    categoria: {
+      id: 4,
+      name: 'Espetinho',
+      icon: 'img/espetinho.png',
+    },
+    checkin: '2010'
+  },
+  {
+    id: 3,
+    name: 'Wood\'s',
+    avatar: 'img/woods.jpg',
+    categoria: {
+      id: 3,
+      name: 'Sertanejo',
+      icon: 'img/sertanejo.png',
+    },
+    checkin: '100'
+  },
+  {
+    id: 4,
+    name: 'Club Chalezinho',
+    avatar: 'img/chale.jpg',
+    categoria: {
+      id: 2,
+      name: 'Pop',
+      icon: 'img/pop.png',
+    },
+    checkin: '1810'
+  },
+  {
+    id: 5,
+    name: 'Jack Rock Bar',
+    avatar: 'img/jack.jpg',
+    categoria: {
+      id: 1,
+      name: 'Rock',
+      icon: 'img/rock.png',
+    },
+    checkin: '1910'
   }]
 
   return {
