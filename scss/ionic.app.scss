@@ -21,7 +21,45 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic", "variables", "mixins";
 
-$title-color: #ccc;
+.pane {
+	background-color: $background-color;
+}
+
+#events-card-list .card {
+	@extend .cancel-border;
+	@include border-radius(4px);
+	@include box-shadow($card-shadow);
+	@include transform(translate3d(0,0,0));
+	@include transition-delay(.5s);
+	@include transition(transform .15s);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.180392);
+	background-color: $card-background;
+
+	margin: 10px 5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+	&.activated{
+		@extend .cancel-border;
+		@include box-shadow($card-shadow-click);
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.180392);
+		background-color: $card-background;
+	}
+
+	img {
+		top: 0 !important;
+	    left: 0 !important;
+	    max-width: 100px !important;
+	    max-height: 100px !important;
+	}
+}
+
+.cancel-border {
+	border: none !important;
+	border-color: transparent !important;
+}
 
 .love-couple {
 	background: #3a6186; /* fallback for old browsers */

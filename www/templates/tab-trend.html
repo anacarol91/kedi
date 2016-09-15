@@ -1,11 +1,15 @@
-<ion-view view-title="Trend">
+<ion-view view-title="Trend" ng-controller="EstabelecimentosCtrl">
+
+	<ion-nav-buttons side="right">
+	  <search-bar ng-model="search"></search-bar>
+	</ion-nav-buttons side="right">
 
   <ion-content id="clubs-list">
   	<ion-refresher on-refresh="refreshEstabelecimentos()" pulling-icon="false"></ion-refresher>
 
   	<!-- estabelecimentos-->
     <ion-list>
-      <ion-item ng-repeat="estabelecimento in estabelecimentos | orderBy: '-checkin'" type="item-text-wrap" href="#/tab/categorias/{{categoria.id}}">
+      <ion-item ng-repeat="estabelecimento in estabelecimentos | filter: search.txt" type="item-text-wrap" href="#/tab/categorias/{{categoria.id}}">
         <img ng-src="{{estabelecimento.avatar}}">
         <h2 ng-bind="estabelecimento.name"></h2>
         <p ng-bind="estabelecimento.checkin"></p>

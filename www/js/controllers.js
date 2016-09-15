@@ -1,6 +1,26 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, $state, $ionicPopup, IonicClosePopupService, Estabelecimentos) {
+
+  $scope.eventos = Estabelecimentos.all();
+
+  $scope.refreshEventos = function () {
+    $scope.eventos = Estabelecimentos.all();
+    $scope.$broadcast('scroll.refreshComplete');
+  }
+
+  $scope.change = function(){
+    $state.go('tab.categorias');
+  }
+
+  $scope.testAlert = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Alert popup',
+      template: 'Tap outside it to close it'
+    });
+    IonicClosePopupService.register(alertPopup); // condição para ionic-close-popup
+  };
+})
 
 .controller('CategoriasCtrl', function($scope, Categorias, Estabelecimentos) {
   // With the new view caching in Ionic, Controllers are only called
@@ -31,6 +51,7 @@ angular.module('starter.controllers', [])
 
 .controller('EstabelecimentosCtrl', function($scope, $state, $stateParams, Estabelecimentos) {
   $scope.categoria = Estabelecimentos.getCategoria($stateParams.categoriaId);
+  $scope.search = {};
 
   $scope.estabelecimentos = Estabelecimentos.all();
 

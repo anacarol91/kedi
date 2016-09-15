@@ -18,10 +18,16 @@
 
     <ion-refresher on-refresh="refreshCategorias()" pulling-icon="false"></ion-refresher>
 
+   <!-- <span ng-repeat="image in images">
+    <img src="{{image}}" width="150px">
+  </span>
+   -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;-->
+
     <!-- categorias -->
     <ion-list>
-      <ion-item class="item-thumbnail-left" ng-repeat="categoria in categorias | orderBy: 'name' | filter: $parent.search as results" type="item-text-wrap" href="#/tab/categorias/{{categoria.id}}">
-        <img ng-src="{{categoria.icon}}">
+      <ion-item class="item-thumbnail-left" collection-repeat="categoria in categorias | orderBy: 'name' | filter: $parent.search" collection-item-height="125" collection-item-width="'33%'" href="#/tab/categorias/{{categoria.id}}">
+        <img ng-src="{{categoria.icon}}"><br/>
         <h2 ng-bind="categoria.name"></h2>
       </ion-item>
     </ion-list>
