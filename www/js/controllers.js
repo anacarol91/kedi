@@ -3,6 +3,7 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, $state, $ionicPopup, IonicClosePopupService, Estabelecimentos) {
 
   $scope.eventos = Estabelecimentos.all();
+  //$scope.groupedPairs = _.chain(eventos).groupBy('date').pairs().sortBy(0).value();
 
   $scope.refreshEventos = function () {
     $scope.eventos = Estabelecimentos.all();

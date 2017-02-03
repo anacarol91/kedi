@@ -19,41 +19,33 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic", "variables", "mixins";
+@import "www/lib/ionic/scss/ionic", "variables", "mixins", "events", "category";
+
+h3 {
+	color: $title-color;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-left: 5%;
+    margin-bottom: -5px;
+}
+
+.estab-adjust {
+	flex-flow: column wrap !important;
+    justify-content: center !important;
+}
 
 .pane {
 	background-color: $background-color;
 }
 
-#events-card-list .card {
+.card-basic {
 	@extend .cancel-border;
 	@include border-radius(4px);
-	@include box-shadow($card-shadow);
 	@include transform(translate3d(0,0,0));
 	@include transition-delay(.5s);
 	@include transition(transform .15s);
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.180392);
-	background-color: $card-background;
-
-	margin: 10px 5px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-
-	&.activated{
-		@extend .cancel-border;
-		@include box-shadow($card-shadow-click);
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.180392);
-		background-color: $card-background;
-	}
-
-	img {
-		top: 0 !important;
-	    left: 0 !important;
-	    max-width: 100px !important;
-	    max-height: 100px !important;
-	}
 }
 
 .cancel-border {
@@ -73,26 +65,5 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	background: linear-gradient(to left, #5f2c82 , #49a09d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-ion-list{
-	ion-item{
-		img {
-			background-color: #ccc;
-			opacity: 0.6;
-			width: 100%;
-		    display: flex;
-		    //margin: 0 auto;
-		    //box-shadow: 0px 4px 28px #000;
-		}
-		img:active{
-			box-shadow: none;
-		}
-	}
-}
-
-#clubs-list .item-complex{
-	.item-content{
-		padding: 0;
-	}
-}
 
 

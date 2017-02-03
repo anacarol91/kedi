@@ -7,35 +7,35 @@ angular.module('starter.services', [])
   var categorias = [{
     id: 0,
     name: 'LGBT',
-    icon: 'img/lgbt.png',
+    icon: 'img/foto-lgbt.jpg',
     estabelecimentos: [
     {
       id: 1,
       name: 'Dduck Club',
-      avatar: 'img/dduck.png',
+      avatar: 'img/dduck.jpg',
       checkin: '1000'
     },{
       id: 2,
       name: 'Royalty Club',
-      avatar: 'img/royalty.png',
+      avatar: 'img/royalty.jpg',
       checkin: '1010'
     }]
   }, {
     id: 1,
     name: 'Rock',
-    icon: 'img/rock.png'
+    icon: 'img/foto-rock.JPG'
   }, {
     id: 2,
     name: 'Pop',
-    icon: 'img/pop.png'
+    icon: 'img/foto-pop.jpg'
   }, {
     id: 3,
     name: 'Sertanejo',
-    icon: 'img/sertanejo.png'
+    icon: 'img/foto-sertanejo.jpg'
   }, {
     id: 4,
     name: 'Espetinho',
-    icon: 'img/espetinho.png'
+    icon: 'img/foto-espetinho.jpg'
   }];
 
   return {
@@ -124,71 +124,7 @@ angular.module('starter.services', [])
     },
     checkin: '1910'
   },
-  {
-    id: 0,
-    name: 'Dduck Club',
-    avatar: 'img/dduck.png',
-    categoria: {
-      id: 0,
-      name: 'LGBT',
-      icon: 'img/lgbt.png',
-    },
-    checkin: '1000'
-  },{
-    id: 1,
-    name: 'Royalty Club',
-    avatar: 'img/royalty.png',
-    categoria: {
-      id: 0,
-      name: 'LGBT',
-      icon: 'img/lgbt.png',
-    },
-    checkin: '1010'
-  },
-  {
-    id: 2,
-    name: 'Beb\'s Bar',
-    avatar: 'img/bebs.jpg',
-    categoria: {
-      id: 4,
-      name: 'Espetinho',
-      icon: 'img/espetinho.png',
-    },
-    checkin: '2010'
-  },
-  {
-    id: 3,
-    name: 'Wood\'s',
-    avatar: 'img/woods.jpg',
-    categoria: {
-      id: 3,
-      name: 'Sertanejo',
-      icon: 'img/sertanejo.png',
-    },
-    checkin: '100'
-  },
-  {
-    id: 4,
-    name: 'Club Chalezinho',
-    avatar: 'img/chale.jpg',
-    categoria: {
-      id: 2,
-      name: 'Pop',
-      icon: 'img/pop.png',
-    },
-    checkin: '1810'
-  },
-  {
-    id: 5,
-    name: 'Jack Rock Bar',
-    avatar: 'img/jack.jpg',
-    categoria: {
-      id: 1,
-      name: 'Rock',
-      icon: 'img/rock.png',
-    },
-    checkin: '1910'
-  }]
+  ]
 
   return {
     all: function() {
@@ -199,7 +135,7 @@ angular.module('starter.services', [])
       estabelecimentos.splice(estabelecimentos.indexOf(estabelecimento), 1);
     },
 
-    getEstabelecimentos: function(estabelecimentoId) {
+    getEstabelecimento: function(estabelecimentoId) {
       for (var i = 0; i < estabelecimentos.length; i++) {
         if (estabelecimentos[i].id === parseInt(estabelecimentoId)) {
           return estabelecimentos[i];

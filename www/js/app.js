@@ -14,18 +14,28 @@ angular.module('starter', ['ionic', 'ionic-search-bar', 'ionic.closePopup', 'sta
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
+
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      if (ionic.Platform.isAndroid()) {
+        StatusBar.backgroundColorByHexString("#ccc");
+        //StatusBar.styleDefault();
+        //StatusBar.overlaysWebView(true);
+      } else {
+        StatusBar.styleDefault();
+      }
     }
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $compileProvider) {
+
+  $compileProvider.imgSrcSanitizationWhitelist('img/'); // necessario para imagens
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel|img):/);
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|tel):/);
 
   /* Platform related config */
+  $ionicConfigProvider.scrolling.jsScrolling(true);
   $ionicConfigProvider.tabs.style('standard');
   $ionicConfigProvider.tabs.position('bottom');
   $ionicConfigProvider.navBar.alignTitle('center');
@@ -66,6 +76,7 @@ angular.module('starter', ['ionic', 'ionic-search-bar', 'ionic.closePopup', 'sta
       }
     }
   })
+
   .state('tab.dash-evento', {
       url: '/dash/:eventoId',
       cacheView: false,

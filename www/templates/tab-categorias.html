@@ -14,23 +14,23 @@
     </div>
   </ion-nav-title>
 
-  <ion-content>
+  <ion-content padding-vertical has-bouncing="true">
 
     <ion-refresher on-refresh="refreshCategorias()" pulling-icon="false"></ion-refresher>
 
-   <!-- <span ng-repeat="image in images">
-    <img src="{{image}}" width="150px">
-  </span>
-   -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;-->
-
     <!-- categorias -->
-    <ion-list>
-      <ion-item class="item-thumbnail-left" collection-repeat="categoria in categorias | orderBy: 'name' | filter: $parent.search" collection-item-height="125" collection-item-width="'33%'" href="#/tab/categorias/{{categoria.id}}">
+    <div id="category-card-list" class="category-list">
+      <a class="card tappable" ng-repeat="categoria in categorias | orderBy: 'name' | filter: $parent.search as results" href="#/tab/categorias/{{categoria.id}}">
         <img ng-src="{{categoria.icon}}"><br/>
-        <h2 ng-bind="categoria.name"></h2>
-      </ion-item>
-    </ion-list>
+        <div class="card-title" ng-bind="categoria.name"></div>
+      </a>
+    </div>
+    <div id="category-card-list" class="category-list">
+      <a class="card tappable" ng-repeat="categoria in categorias | orderBy: 'name' | filter: $parent.search as results" href="#/tab/categorias/{{categoria.id}}">
+        <img ng-src="{{categoria.icon}}"><br/>
+        <div class="card-title" ng-bind="categoria.name"></div>
+      </a>
+    </div>
 
     <!-- estabelecimentos -->
     <ion-list ng-show="results.length === 0">
@@ -45,18 +45,3 @@
 
   </ion-content>
 </ion-view>
-
-    <!--<div class="row" ng-repeat="i in categorias" ng-switch on="$index % 3">
-      <div class="col col-33" ng-switch-when="0" href="#/tab/categorias/{{categorias[$index].id}}">
-        <img style="background-color: #ccc;opacity: 0.5;width: 100%;" ng-src="{{categorias[$index].icon}}">
-        <h2>{{categorias[$index].name}}</h2>
-      </div>
-      <div class="col col-33" ng-switch-when="0" href="#/tab/categorias/{{categorias[$index+1].id}}">
-        <img style="background-color: #ccc;opacity: 0.5;width: 100%;" ng-src="{{categorias[$index+1].icon}}">
-        <h2>{{categorias[$index+1].name}}</h2>
-      </div>
-      <div class="col col-33" ng-switch-when="0" href="#/tab/categorias/{{categorias[$index+2].id}}">
-        <img style="background-color: #ccc;opacity: 0.5;width: 100%;" ng-src="{{categorias[$index+2].icon}}">
-        <h2>{{categorias[$index+2].name}}</h2>
-      </div>
-    </div>-->
